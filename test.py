@@ -15,3 +15,4 @@ import pandas as pd
 #Record positions and pnl
 
 #This strategy is an arbitrage strategy that profits from discrepancies between the price of an index and its components
+#We will backtest on the Bitwise 10 (top 10 cryptos) pricing data 
