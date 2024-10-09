@@ -1,7 +1,6 @@
-from pycoingecko import CoinGeckoAPI
 import requests
 import pandas as pd
-
+import yfinance as yf
 #Test a strategy
 
 #Create index_rebalancing class
@@ -16,3 +15,26 @@ import pandas as pd
 
 #This strategy is an arbitrage strategy that profits from discrepancies between the price of an index and its components
 #We will backtest on the Bitwise 10 (top 10 cryptos) pricing data 
+
+BITW = yf.Ticker("BITW")
+index_data = BITW.history(period="3mo")
+
+cryptos = ["BTC-USD","ETH-USD","SOL-USD","XRP-USD","ADA-USD","AVAX-USD",
+           "LINK-USD", "BCH-USD", "DOT-USD", "UNI7083-USD"]
+
+crypto_data = {}
+
+for crypto in cryptos:
+    ticker = yf.Ticker(crypto)
+    crypto_data[crypto] = ticker.history(period="3mo")
+    
+print(crypto_data)
+
+
+
+
+
+
+
+#while True:
+#   IndexPrice = 

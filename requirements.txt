@@ -1,3 +1,4 @@
 pycoingecko
 numpy
 pandas
+yfinance
